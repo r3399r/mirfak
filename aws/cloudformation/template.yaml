@@ -105,7 +105,7 @@ Resources:
         Variables:
           PROJECT: !Sub ${Project}
           ENVR: !Sub ${TargetEnvr}
-          TOKEN_LINE: TBD
+          TOKEN_LINE: !Sub '{{resolve:ssm:${Project}-${TargetEnvr}-line-token}}'
   InvokePermissionChat:
     Type: AWS::Lambda::Permission
     DependsOn: [ServerlessApi, LambdaChat]
@@ -121,3 +121,12 @@ Resources:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: !Sub ${Project}-${TargetEnvr}
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: false
+        BlockPublicPolicy: false
+        IgnorePublicAcls: false
+        RestrictPublicBuckets: false
+      OwnershipControls:
+        Rules:
+        - ObjectOwnership: ObjectWriter
+      AccessControl: PublicRead

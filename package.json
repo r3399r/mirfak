@@ -15,11 +15,14 @@
     "build": "webpack --config webpack.config.js",
     "pre:commit": "run-s lint test:coverage build",
     "pre:dev": "run-s fix test:coverage",
-    "pre:deploy": "run-s clean build"
+    "pre:deploy": "run-s clean build",
+    "script:richmenu": "ts-node src/script/richmenu.ts",
+    "script:brochure": "ts-node src/script/brochure.ts"
   },
   "license": "ISC",
   "dependencies": {
     "@line/bot-sdk": "^7.5.2",
+    "aws-sdk": "^2.1379.0",
     "axios": "^1.3.4",
     "dotenv": "^16.0.3",
     "inversify": "^6.0.1",

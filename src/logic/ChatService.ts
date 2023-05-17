@@ -10,10 +10,12 @@ export class ChatService {
   private readonly client!: Client;
 
   private async sendBrochure(replyToken: string) {
+    const project = process.env.PROJECT;
+    const envr = process.env.ENVR;
     await this.client.replyMessage(replyToken, {
       type: 'image',
-      originalContentUrl: '',
-      previewImageUrl: '',
+      originalContentUrl: `https://${project}-${envr}.s3.ap-southeast-1.amazonaws.com/brochure.png`,
+      previewImageUrl: `https://${project}-${envr}.s3.ap-southeast-1.amazonaws.com/brochure.png`,
     });
   }
 
