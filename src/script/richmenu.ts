@@ -5,7 +5,7 @@ import { SSM } from 'aws-sdk';
 const main = async () => {
   const envr = 'prod';
 
-  const ssm = new SSM({ region: 'ap-southeast-1' });
+  const ssm = new SSM({ region: 'ap-east-2' });
   const parameter = await ssm
     .getParameter({ Name: `mirfak-${envr}-line-token` })
     .promise();

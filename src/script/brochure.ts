@@ -2,11 +2,11 @@ import * as fs from 'fs';
 import { S3 } from 'aws-sdk';
 
 const main = async () => {
-  const s3 = new S3();
+  const s3 = new S3({ region: 'ap-east-2' });
   await s3
     .upload({
       Body: fs.createReadStream('./src/script/brochure.png'),
-      Bucket: 'mirfak-prod',
+      Bucket: 'mirfak-prod-2',
       Key: 'brochure.png',
       ACL: 'public-read',
     })
