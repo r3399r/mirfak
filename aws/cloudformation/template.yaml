@@ -128,7 +128,7 @@ Resources:
   S3BucketStorage:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: !Sub ${Project}-${TargetEnvr}-2
+      BucketName: !Sub y-${Project}-${TargetEnvr}
       OwnershipControls:
         Rules:
         - ObjectOwnership: ObjectWriter

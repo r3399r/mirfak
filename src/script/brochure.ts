@@ -6,7 +6,7 @@ const main = async () => {
   await s3
     .upload({
       Body: fs.createReadStream('./src/script/brochure.png'),
-      Bucket: 'mirfak-prod-2',
+      Bucket: 'y-mirfak-prod',
       Key: 'brochure.png',
       ACL: 'public-read',
     })

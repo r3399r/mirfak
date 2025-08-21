@@ -14,8 +14,8 @@ export class ChatService {
     const envr = process.env.ENVR;
     await this.client.replyMessage(replyToken, {
       type: 'image',
-      originalContentUrl: `https://${project}-${envr}.s3.ap-east-2.amazonaws.com/brochure.png`,
-      previewImageUrl: `https://${project}-${envr}.s3.ap-east-2.amazonaws.com/brochure.png`,
+      originalContentUrl: `https://y-${project}-${envr}.s3.ap-east-2.amazonaws.com/brochure.png`,
+      previewImageUrl: `https://y-${project}-${envr}.s3.ap-east-2.amazonaws.com/brochure.png`,
     });
   }
 
